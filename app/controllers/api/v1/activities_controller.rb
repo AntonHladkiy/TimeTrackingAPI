@@ -14,6 +14,7 @@ module Api
 
       def create
         @activity = current_user.activities.create(activity_params)
+        @activity.date=Time.today
         if @activity.save
           render json: @activity, status: :created
         else
