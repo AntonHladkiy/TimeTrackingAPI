@@ -6,7 +6,7 @@ module Api
       def index
         if user.admin?
           @activity = Activity.all
-        elsif user.user?
+        elsif user.developer?
           @activity = current_user.activities
         end
         render json: @activity
