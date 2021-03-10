@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   devise_for :users
   namespace :api do
     namespace :v1 do
-      resources :activities, :categories, :projects
+      resources :activities, :categories, :projects, :users
       post :auth, to: 'authentication#create'
       get  '/auth' => 'authentication#fetch'
       devise_for :users, controllers: { registrations: 'registrations' }

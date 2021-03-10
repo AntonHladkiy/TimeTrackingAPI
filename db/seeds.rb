@@ -6,3 +6,17 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+#
+#
+#
+
+
+User.create({email: 'admin@gmail.com',password: 'adminpassword', firstName: 'Admin',secondName: 'User',role:1})
+User.create({email: 'developer@gmail.com',password: 'devpassword', firstName: 'Developer',secondName: 'User',role:0})
+User.create({email: 'developer2@gmail.com',password: 'devpassword', firstName: 'Developer2',secondName: 'User2',role:0})
+
+Project.create({name: 'Project1'})
+Project.create({name: 'Project2'})
+
+Category.create({name: 'Category1'})
+Category.create({name: 'Category2'})
