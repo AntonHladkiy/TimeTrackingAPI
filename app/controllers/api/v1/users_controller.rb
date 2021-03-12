@@ -4,7 +4,7 @@ module Api
   module V1
     class UsersController < ApiController
       def index
-        @user = User.where(:role => developer)
+        @user = User.where(:role => "developer")
         render json: @user
       end
     end
