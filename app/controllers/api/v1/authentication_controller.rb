@@ -9,7 +9,7 @@ module Api
         if user&.valid_password?(params[:password])
           render json: { token: JsonWebToken.encode(sub: user.id),user: user}
         else
-          render json: { errors: 'invalid' }
+          render json: { errors: 'invalid' },status:401
         end
       end
 
