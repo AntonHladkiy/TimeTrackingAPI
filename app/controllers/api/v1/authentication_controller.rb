@@ -12,10 +12,6 @@ module Api
           render json: { errors: 'invalid' },status:401
         end
       end
-
-      def fetch
-        render json: current_user
-      end
     end
   end
 end
