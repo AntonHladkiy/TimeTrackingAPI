@@ -318,12 +318,15 @@ Devise.setup do |config|
         end
 
         def authenticate!
+          p "test"
           token = request.headers.fetch('Authorization', '').split(' ').last
           payload = JsonWebToken.decode(token)
           success! User.find(payload['sub'])
         rescue ::JWT::ExpiredSignature
+          p "fail1"
           fail! 'Auth token has expired'
         rescue ::JWT::DecodeError
+          p "fails2"
           fail! 'Auth token is invalid'
         end
       end
