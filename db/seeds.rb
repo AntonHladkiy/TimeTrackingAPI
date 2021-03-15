@@ -10,16 +10,17 @@
 #
 #
 
+Activity.__elasticsearch__.create_index!(force:true)
 
-User.create({email: 'admin@gmail.com',password: 'adminpassword', firstName: 'Admin',lastName: 'User',role:1})
-User.create({email: 'developer1@gmail.com',password: 'devpassword', firstName: 'Developer1',lastName: 'User1',role:0})
-User.create({email: 'developer2@gmail.com',password: 'devpassword', firstName: 'Developer2',lastName: 'User2',role:0})
+User.create({email: 'admin@gmail.com',password: 'adminpassword', firstName: 'Admin',lastName: 'User',role:1}) if Rails.env.development?
+User.create({email: 'developer1@gmail.com',password: 'devpassword', firstName: 'Developer1',lastName: 'User1',role:0}) if Rails.env.development?
+User.create({email: 'developer2@gmail.com',password: 'devpassword', firstName: 'Developer2',lastName: 'User2',role:0}) if Rails.env.development?
 
-Project.create({name: 'Project1'})
-Project.create({name: 'Project2'})
+Project.create({name: 'Project1'}) if Rails.env.development?
+Project.create({name: 'Project2'}) if Rails.env.development?
 
-Category.create({name: 'Category1'})
-Category.create({name: 'Category2'})
+Category.create({name: 'Category1'}) if Rails.env.development?
+Category.create({name: 'Category2'}) if Rails.env.development?
 AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
 
 

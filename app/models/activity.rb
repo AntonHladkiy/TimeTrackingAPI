@@ -5,7 +5,7 @@ class Activity < ApplicationRecord
   include Elasticsearch::Model::Callbacks
   settings do
     mappings dynamic: false do
-      indexes :name, type: :text
+      indexes :user_id, type: :numericality
       indexes :category, type: :text
       indexes :project, type: :text
     end
@@ -15,4 +15,14 @@ class Activity < ApplicationRecord
   validates :project, presence: true
   validates :category, presence: true
   validates :hours, presence: true, numericality: { greater_than: 0 }
+  def self.filtered_search(query)
+    self.__elasticsearch__.search(
+      query: {
+        multi_match: {
+          query:query,
+          fields: %w[category user_id project]
+        }
+      }
+    )
+  end
 end

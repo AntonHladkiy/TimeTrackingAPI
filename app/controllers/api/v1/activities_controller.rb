@@ -4,12 +4,22 @@ module Api
   module V1
     class ActivitiesController < ApiController
       def index
+
         if current_user.admin?
-          @activity = Activity.all
+          if(!params[:query].blank?)
+            response = Activity.filtered_search(params[:query])
+            render json: {
+              results: response.results,
+              total: response.total
+            }
+          else
+            @activity = Activity.all
+            render json: @activity
+          end
         elsif current_user.developer?
           @activity = current_user.activities
+          render json: @activity
         end
-        render json: @activity
       end
 
       def create
