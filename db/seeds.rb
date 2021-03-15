@@ -11,9 +11,9 @@
 #
 
 
-User.create({email: 'admin@gmail.com',password: 'adminpassword', firstName: 'Admin',secondName: 'User',role:1})
-User.create({email: 'developer1@gmail.com',password: 'devpassword', firstName: 'Developer1',secondName: 'User1',role:0})
-User.create({email: 'developer2@gmail.com',password: 'devpassword', firstName: 'Developer2',secondName: 'User2',role:0})
+User.create({email: 'admin@gmail.com',password: 'adminpassword', firstName: 'Admin',lastName: 'User',role:1})
+User.create({email: 'developer1@gmail.com',password: 'devpassword', firstName: 'Developer1',lastName: 'User1',role:0})
+User.create({email: 'developer2@gmail.com',password: 'devpassword', firstName: 'Developer2',lastName: 'User2',role:0})
 
 Project.create({name: 'Project1'})
 Project.create({name: 'Project2'})

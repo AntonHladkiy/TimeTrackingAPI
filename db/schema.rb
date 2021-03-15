@@ -70,7 +70,7 @@ ActiveRecord::Schema.define(version: 2021_03_11_131818) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "firstName"
-    t.string "secondName"
+    t.string "lastName"
     t.integer "role", default: 0
     t.index ["email"], name: "index_users_on_email", unique: true
   end
