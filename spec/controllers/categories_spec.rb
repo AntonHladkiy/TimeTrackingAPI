@@ -13,6 +13,7 @@ RSpec.describe 'GET /api/v1/categories', type: :request do
     before do
       if(User.find_by(email: params[:email]).nil?)
         @user=Fabricate(:user)
+        p @user
         @token=JsonWebToken.encode(sub: @user.id)
       end
       get url, headers: {Authorization:@token}
@@ -26,6 +27,7 @@ RSpec.describe 'GET /api/v1/categories', type: :request do
     before do
       if(User.find_by(email: params[:email]).nil?)
         @user=Fabricate(:user)
+        p @user
       end
       get url, headers: {Authorization:"random"}
     end
