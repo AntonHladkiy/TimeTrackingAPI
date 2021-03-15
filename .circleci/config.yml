@@ -38,6 +38,12 @@ jobs:
           pkg-manager: yarn
           cache-key: "yarn.lock"
       - run:
+          name: "Setup custom environment variables"
+          command: echo 'export secretkey="07cf4aa414a6eacbcb46a34c49b6c4745b1901dad04030b17c8b0d56fddfc4a28d8cacbf7d3cb25b334cafe1f179b787e36294d696896d9e9bd81079af5e3225"' >> $BASH_ENV
+      - run:
+          name: "What was my custom environment variable?"
+          command: echo ${secretkey}
+      - run:
           name: Wait for DB
           command: dockerize -wait tcp://localhost:5432 -timeout 1m
       - run:
