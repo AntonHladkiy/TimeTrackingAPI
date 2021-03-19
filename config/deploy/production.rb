@@ -59,3 +59,9 @@
 #     auth_methods: %w(publickey password)
 #     # password: "please use keys"
 #   }
+ask(:password, nil, echo: false)
+
+server '46.101.51.211',
+       user: 'deployer',
+       roles: %w{app},
+       password: fetch(:password)
