@@ -76,7 +76,7 @@ namespace :deploy do
   desc 'Restart application'
   task :restart do
     on roles(:app), in: :sequence, wait: 5 do
-      execute "~/apps/TimeTrackingAPI/current default do bundle exec puma -C /home/deployer/apps/TimeTrackingAPI/shared/puma.rb"
+      execute "cd ~/apps/TimeTrackingAPI/current do bundle exec puma -C /home/deployer/apps/TimeTrackingAPI/shared/puma.rb"
     end
   end
 
