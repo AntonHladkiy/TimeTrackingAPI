@@ -61,7 +61,6 @@ namespace :deploy do
   task :initial do
     on roles(:app) do
       before 'deploy:restart'
-      execute 'bundle exec puma -C /home/deployer/apps/TimeTrackingAPI/shared/puma.rb'
       invoke 'deploy'
     end
   end
