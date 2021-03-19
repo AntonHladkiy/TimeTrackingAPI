@@ -85,4 +85,5 @@ test:
 production:
   <<: *default
   database: TimeTrackingAPI_production
-  username: TimeTrackingAPI
+  username: timetrackingapi
+  password: "password"
