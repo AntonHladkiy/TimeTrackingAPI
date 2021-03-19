@@ -29,6 +29,7 @@ module TimeTrackingAPI
     config.middleware.use ActionDispatch::Flash
     config.middleware.use ActionDispatch::Cookies
     config.middleware.use ActionDispatch::Session::CookieStore
+    config.secret_key_base = '<%= ENV["SECRET_KEY_BASE"] %>'
     # Configuration for the application, engines, and railties goes here.
     #
     # These settings can be overridden in specific environments using the files
