@@ -1,6 +1,6 @@
 server '46.101.51.211', port: 23, roles: [:web, :app, :db], primary: true
 
-set :repo_url,        'git@github.com:AntonHladkiy/TimeTrackingAPI'
+set :repo_url,        'git@github.com:AntonHladkiy/TimeTrackingAPI.git'
 set :application,     'TimeTrackingAPI'
 set :user,            'deployer'
 set :puma_threads,    [4, 16]
