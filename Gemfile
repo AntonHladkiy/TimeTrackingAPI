@@ -29,7 +29,6 @@ gem 'figaro'
 gem 'jwt'
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 gem 'rack-cors'
-gem 'sshkit'
 gem 'fabrication'
 gem 'simplecov', require: false, group: :test
 group :development, :test do

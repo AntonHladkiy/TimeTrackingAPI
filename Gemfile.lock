@@ -315,7 +315,6 @@ DEPENDENCIES
   rubocop-rails
   sassc-rails
   simplecov
-  sshkit
   tzinfo-data
 
 RUBY VERSION
