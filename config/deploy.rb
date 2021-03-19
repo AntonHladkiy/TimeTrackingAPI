@@ -60,7 +60,7 @@ namespace :deploy do
   desc 'Initial Deploy'
   task :initial do
     on roles(:app) do
-      before 'deploy:restart', 'puma:start'
+      before 'deploy:restart', 'bundle exec puma -C /home/deployer/apps/TimeTrackingAPI/shared/puma.rb'
       invoke 'deploy'
     end
   end
