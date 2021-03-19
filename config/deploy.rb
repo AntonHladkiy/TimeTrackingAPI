@@ -64,6 +64,7 @@ namespace :deploy do
       invoke 'deploy'
     end
   end
+
   desc 'Rails Secrets'
   task :secret do
     on roles(:app) do
