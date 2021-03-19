@@ -22,7 +22,7 @@ default: &default
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   host: localhost
   username: postgres
-  password: "password"
+  password: <%= ENV["dbpassword"] %>
   timeout: 5000
 development:
   <<: *default
@@ -85,3 +85,5 @@ test:
 production:
   <<: *default
   database: TimeTrackingAPI_production
+  username: TimeTrackingAPI
+  password: "password"
