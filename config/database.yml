@@ -86,4 +86,3 @@ production:
   <<: *default
   database: TimeTrackingAPI_production
   username: TimeTrackingAPI
-  password: password
