@@ -20,6 +20,6 @@ Project.create({name: 'Project2'})if Rails.env.development?
 
 Category.create({name: 'Category1'})if Rails.env.development?
 Category.create({name: 'Category2'})if Rails.env.development?
-AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
+AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password')
 
 
