@@ -85,5 +85,5 @@ test:
 production:
   <<: *default
   database: TimeTrackingAPI_production
-  #username: TimeTrackingAPI
-  #password: <%= ENV['TIMETRACKINGAPI_DATABASE_PASSWORD'] %>
+  username: TimeTrackingAPI
+  password: <%= ENV['dbpassword'] %>
