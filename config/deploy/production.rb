@@ -60,3 +60,4 @@
 #     # password: "please use keys"
 #   }
 ask(:password, nil, echo: false)
+server '46.101.51.211', user: 'deployer', port: 22, password: fetch(:password), roles: %w{web app db}
