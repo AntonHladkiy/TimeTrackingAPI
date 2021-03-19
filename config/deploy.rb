@@ -1,4 +1,4 @@
-server '46.101.51.211', port: 22, roles: [:web, :app, :db], primary: true
+server '46.101.51.211', port: 22 , roles: [:web, :app, :db], primary: true
 
 set :repo_url,        'git@github.com:AntonHladkiy/TimeTrackingAPI.git'
 set :application,     'TimeTrackingAPI'
@@ -64,6 +64,13 @@ namespace :deploy do
       invoke 'deploy'
     end
   end
+  desc 'Rails Secrets'
+  task :secret do
+    on roles(:app) do
+      execute "export SECRET_KEY_BASE=`bundle exec rake secret`"
+    end
+  end
+  before :finishing,  :secret
 
   desc 'Restart application'
   task :restart do
