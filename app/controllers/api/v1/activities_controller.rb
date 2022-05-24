@@ -19,7 +19,9 @@ module Api
         elsif current_user.developer?
           @activity = current_user.activities.where(:date => params[:date])
         end
-        @activity=@activity.offset((params[:page].to_i-1)*10).limit(10)
+        if(params[:page]!='')
+          @activity=@activity.offset((params[:page].to_i-1)*10).limit(10)
+        end
         render json: @activity
       end
 
